@@ -17,6 +17,21 @@ repositories {
     jcenter()
 }
 
+version = "0.0.1"
+
+tasks {
+    jar {
+        manifest {
+            attributes (
+                mapOf(
+                    "Implementation-Title" to project.name,
+                    "Implementation-Version" to project.version
+                )
+            )
+        }
+    }
+}
+
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api("org.apache.commons:commons-math3:3.6.1")
